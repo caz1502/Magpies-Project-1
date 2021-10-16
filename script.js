@@ -1,4 +1,3 @@
-
 // Time on main Page
 var currentDate = moment().format('ddd Do MMM, h:mm: a');
 $("#time").text(currentDate);
@@ -46,3 +45,4 @@ $.getJSON("http://ipwhois.app/json/?", function (response) {
 
   })
 });
+
