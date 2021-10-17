@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/css/uikit.min.css" />
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit.min.js"></script>
@@ -19,6 +17,7 @@
     <!-- linking moments -->
     <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- local style sheet -->
     <link rel="stylesheet" href="./assets/css/style2.css" />
     <!-- favicon -->
     <link rel="icon" type="image/png" href="./assets/images/Favicon.jpg" sizes="36x36" />
@@ -29,17 +28,16 @@
     <!-- header -->
     <header>
         <div class="row">
-            <div class="uk-grid ">
-
-                <div class="uk-width-1-3 uk-text-center ">
-                    <div id="weather">Weather</div>
+            <div class="uk-grid uk-grid-collapse uk-child-width-expand@s uk-text-center">
+                <div class=" uk-text-centre">
+                    <!-- uk-background-primary uk-light -->
+                    <!-- https://caz1502.github.io/Weather-Dashboard/ -->
+                    <div id="weather"></div>                   
                 </div>
-
-                <div class="uk-width-1-3 uk-text-center">
-                    <div id="daymaker">Greetig </div>
+                <div class="uk-text-centre">
+                    <div id="daymaker">Greeting </div>
                 </div>
-
-                <div class="uk-width-1-3 uk-text-centre">
+                <div class="uk-text-centre">
                     <div id="time">Time</div>
                 </div>
             </div>
@@ -59,23 +57,27 @@
     </div>
     <!-- footer -->
     <footer>
-        <div class="uk-grid ">
-            <div class="uk-width-1-4" id="carl">
-                <a href="#" class="fa fa-github">
-                </a>carl
+        <div class="uk-grid uk-grid-collapse uk-child-width-expand@s ">
+            <div class=" uk-text-large" id="carl">
+                <a href="https://github.com/carlsantiago target=_blank" class="fa fa-github uk-text-decoration-none">
+                </a> carl santiago
             </div>
-            <div class="uk-width-1-4" id="gustavo">
-                <a href="#" class="fa fa-github">
-                </a>gustavo
+            <div class="uk-text-large uk-text-left uk-text-decoration-none" id="gustavo">
+                <a href="https://github.com/gharduim target=_blank" class="fa fa-github uk-text-decoration-none">
+                </a> gustavo gharduim
             </div>
-            <div class="uk-width-1-4" id="pasan">
-                <a href="#" class="fa fa-github">
-                </a>pasan
+            <div class="uk-text-large uk-text-left" id="pasan">
+                <a href="https://github.com/AsanIlva target=_blank" class="fa fa-github uk-text-decoration-none">
+                </a> pasan de silva
             </div>
-            <div class="uk-width-1-4" id="carol">
-                <a href="#" class="fa fa-github">
-                </a>carol
+            <div class="uk-text-large uk-text-left" id="carol">
+                <a href="https://github.com/caz1502 target=_blank" class="fa fa-github uk-text-decoration-none">
+                </a> carol shiers
             </div>
+        </div>
+        <!-- Production -->
+        <div class="uk-grid uk-grid-collapse uk-child-width-expand@s " id="logo">
+            <div class="uk-text-medium uk-text-center" id="logo"> <img src="./assets/images/Logo3.jpg" alt="Day Maker Logo" width="30px" height="30px">   Produced By Remarkable Magpies 2021</div>
         </div>
     </footer>
 
@@ -85,7 +87,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js">  </script>
     <script src="script.js"></script>
-    <script src="script.js"></script>
 </body>
-
 </html>
