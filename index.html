@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/css/uikit.min.css"/>
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/css/uikit.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <title>Document</title>
   </head>
@@ -15,96 +18,212 @@
     <!-- NavBar -->
     <nav class="uk-navbar-container uk-background-secondary" uk-navbar>
       <div class="uk-navbar-center">
-          <a class="uk-navbar-item uk-logo" href="#">Day Maker</a>
+        <a class="uk-navbar-item uk-logo" href="#">Day Maker</a>
       </div>
       <div class="uk-navbar-left">
         <a class="uk-navbar-item uk-logo" href="#">Day/Time</a>
-      </div>
-      <div class="uk-navbar-right">
-        <a class="uk-navbar-item uk-logo" href="#">Weather</a>
       </div>
     </nav>
 
     <!-- This is a button toggling the modal -->
     <div class="container uk-position-center">
-      <h2 class="uk-heading-line uk-text-center"><span>Select a profile</span></h2>
-        <div class="uk-height-medium uk-flex uk-flex-center">
-          <button class="uk-button uk-button-secondary uk-border-rounded uk-box-shadow-small uk-margin-auto-vertical" type="button" uk-toggle="target: #modal-example">
-            <span uk-icon="icon: plus; ratio: 3.5"></span>
-          </button>
-        </div>
+      <h2 class="uk-heading-line uk-text-center">
+        <span>Select a profile</span>
+      </h2>
+      <div
+        class="uk-height-medium uk-flex uk-flex-center"
+        id="profilesContainer"
+      >
+        <button
+          class="
+            uk-button
+            uk-button-secondary
+            uk-border-rounded
+            uk-box-shadow-small
+            uk-margin-auto-vertical
+          "
+          type="button"
+          uk-toggle="target: #modal-example"
+        >
+          <span uk-icon="icon: plus; ratio: 3.5"></span>
+        </button>
+      </div>
     </div>
-
 
     <!-- This is the modal -->
     <div id="modal-example" uk-modal>
       <div class="uk-modal-dialog uk-modal-body">
         <h2 class="uk-modal-title">Create a profile</h2>
         <form>
-
           <fieldset class="uk-fieldset">
+            <label class="uk-form-label uk-text-default" for="form-stacked-text"
+              >Name</label
+            >
+            <div class="uk-margin uk-inline">
+              <span class="uk-form-icon" uk-icon="icon: user"></span>
+              <input
+                class="uk-input uk-form-width-large"
+                id="name"
+                type="text"
+                placeholder="John Doe"
+              />
+            </div>
 
-            <label class="uk-form-label uk-text-default" for="form-stacked-text">Name</label>
-              <div class="uk-margin uk-inline"> 
-
-                <span class="uk-form-icon" uk-icon="icon: user"></span>
-                  <input class="uk-input uk-form-width-large" type="text" placeholder="John Doe">
-              </div>
-      
-            <label class="uk-form-label uk-text-default" for="form-stacked-text">Location</label>
-            <div class="uk-margin uk-inline"> 
-
+            <label class="uk-form-label uk-text-default" for="form-stacked-text"
+              >Location</label
+            >
+            <div class="uk-margin uk-inline">
               <span class="uk-form-icon" uk-icon="icon: location"></span>
-                <input class="uk-input uk-form-width-large" type="text" placeholder="Adelaide">
+              <input
+                class="uk-input uk-form-width-large"
+                id="location"
+                type="text"
+                placeholder="Adelaide"
+              />
             </div>
 
             <div class="uk-margin-small">
-              <label class="uk-form-label uk-text-default" for="form-stacked-text">Joke Category</label>
+              <label
+                class="uk-form-label uk-text-default"
+                for="form-stacked-text"
+                >Joke Category</label
+              >
             </div>
 
             <div class="uk-panel uk-panel-scrollable">
-
               <ul class="uk-list">
-                <li></li><label><input class="uk-radio" type="radio" name="radio1"> Any</label></li>
-                  <li>
-                    <label><input class="uk-radio" type="radio" name="radio1"> Custom:</label>
-                      <ul>
-                        <table class="uk-table">
-                          <tbody>
-                            <tr class="uk-grid uk-grid-column-small uk-child-width-1-3@s">
-                              <td class="uk-padding-remove"><li><label><input class="uk-checkbox" type="checkbox"> Programming</label></li></td>
-                              <td class="uk-padding-remove"><li><label><input class="uk-checkbox" type="checkbox"> Misc</label></li></td>
-                              <td class="uk-padding-remove"><li><label><input class="uk-checkbox" type="checkbox"> Dark</label></li></td>
-                              <td class="uk-padding-remove"><li><label><input class="uk-checkbox" type="checkbox"> Pun</label></li></td>
-                              <td class="uk-padding-remove"><li><label><input class="uk-checkbox" type="checkbox"> Spooky</label></li></td>
-                              <td class="uk-padding-remove"><li><label><input class="uk-checkbox" type="checkbox"> Christmas</label></li></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </ul>
-                  </li>
+                <li>
+                  <label
+                    ><input
+                      class="uk-radio"
+                      id="jokeAny"
+                      type="radio"
+                      name="radio1"
+                    />
+                    Any</label
+                  >
+                </li>
+                <li>
+                  <label
+                    ><input
+                      class="uk-radio"
+                      id="jokeCustom"
+                      type="radio"
+                      name="radio1"
+                    />
+                    Custom:</label
+                  >
+                  <ul>
+                    <table class="uk-table">
+                      <tbody>
+                        <tr
+                          class="
+                            uk-grid uk-grid-column-small uk-child-width-1-3@s
+                          "
+                        >
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="jokeProgramming"
+                                  type="checkbox"
+                                />
+                                Programming</label
+                              >
+                            </li>
+                          </td>
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="jokeMisc"
+                                  value="misc"
+                                  type="checkbox"
+                                />
+                                Misc</label
+                              >
+                            </li>
+                          </td>
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="jokeDark"
+                                  value="dark"
+                                  type="checkbox"
+                                />
+                                Dark</label
+                              >
+                            </li>
+                          </td>
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="jokePun"
+                                  value="pun"
+                                  type="checkbox"
+                                />
+                                Pun</label
+                              >
+                            </li>
+                          </td>
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="jokeSpooky"
+                                  value="spooky"
+                                  type="checkbox"
+                                />
+                                Spooky</label
+                              >
+                            </li>
+                          </td>
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="jokeChristmas"
+                                  value="christmas"
+                                  type="checkbox"
+                                />
+                                Christmas</label
+                              >
+                            </li>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </ul>
+                </li>
               </ul>
-          </div>
-
+            </div>
           </fieldset>
-      </form>
-            <p class="uk-text-right">
+        </form>
+        <p class="uk-text-right">
           <button
             class="uk-button uk-button-default uk-modal-close"
             type="button"
           >
             Cancel
           </button>
-          <button class="uk-button uk-button-primary" type="button">
+          <button class="uk-button uk-button-primary" id="save" type="button">
             Save
           </button>
-          </p>
+        </p>
       </div>
     </div>
     <!-- End of modal -->
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit-icons.min.js"></script>
-
+    <script src="./assets/js/landing.js"></script>
   </body>
 </html>
