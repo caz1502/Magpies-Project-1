@@ -1,18 +1,61 @@
-.main {
-width: 90%;
-margin-left: auto;
-margin-right: auto;
+
+/* setting body to viewport */
+* {font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}  
+
+body {
+    height: 100vh;
+    width: 100vw;   
 }
 
+/* To indent and centre main body */
+.main {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}    
 
+/* Header */
 header {
-    background-color: aqua;
+  
     padding: 1rem;
     margin-bottom: 1rem;
+    letter-spacing: .1em;
 }
 
+#weather,
+#time  {
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+#weather a {
+    font-size: 1rem;
+}
+#daymaker {
+    font-size: 3rem;
+}
+
+/*Footer */
 footer {
-    background-color: aqua;
     padding: 1rem;
     margin-top: 1rem;
+}
+
+#carl,
+#carol,
+#pasan,
+#gustavo {
+    padding-left: 2.5rem;
+    letter-spacing: .1em;    
+}
+
+.fa {
+    font-size: 1.8rem;      
+}
+
+#logo {
+    margin-top: .5rem;
+    padding: 1rem;
+    letter-spacing: .1em;
 }
