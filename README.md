@@ -42,7 +42,7 @@ THEN
 
 The Remarkable Magpies 
 
-![Project 1](./assets/images/Carl.JPG ) ![Project 1](./assets/images/Gustavo ) ![Project 1](./assets/images/Pasan.JPG ) ![Project 1](./assets/images/Caz3.JPG )
+![Project 1](./assets/images/Carl.JPG ) ![Project 1](./assets/images/Gustavo.jpg ) ![Project 1](./assets/images/Pasan.JPG ) ![Project 1](./assets/images/caz3.JPG )
 
 ## Website Image
 ![Project 1](./assets/images/) Add image here
