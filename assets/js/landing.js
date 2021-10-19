@@ -178,21 +178,7 @@ var profilesEl = document.getElementById("profilesContainer")
 var createProfile = function(selectedCategories,newsSelectedCategories,userName,userCountry) {
     
 
-    var newButton = document.createElement('button')
-    newButton.classList = 'uk-button uk-button-secondary uk-border-rounded uk-box-shadow-small uk-margin-auto-vertical'
-    newButton.setAttribute('type','button')
 
-    var newA = document.createElement('a')
-    newA.setAttribute('href', 'index2.html')
-
-    var newSpan = document.createElement('span')
-    newSpan.textContent = userName
-
-    newButton.appendChild(newSpan)
-    newA.appendChild(newButton)
-    profilesEl.appendChild(newA)
-    var categories = selectedCategories.join()
-    var newsCategories = newsSelectedCategories.join()
 
     var user1 = { 
         'name' : userName,
@@ -208,10 +194,27 @@ var createProfile = function(selectedCategories,newsSelectedCategories,userName,
 
 var render = function(){
 
+    
     for (userName in globalProfiles){
         console.log(globalProfiles[userName].name)
+
+        var newButton = document.createElement('button')
+        newButton.classList = 'uk-button uk-button-secondary uk-border-rounded uk-box-shadow-small uk-margin-auto-vertical'
+        newButton.setAttribute('type','button')
+    
+        var newA = document.createElement('a')
+        newA.setAttribute('href', 'index2.html')
+    
+        var newSpan = document.createElement('span')
+        newSpan.textContent = userName
+    
+        newButton.appendChild(newSpan)
+        newA.appendChild(newButton)
+        profilesEl.appendChild(newA)
+
     }
     console.log(globalProfiles)
 }
+
 
 render()
