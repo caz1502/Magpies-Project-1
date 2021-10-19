@@ -83,45 +83,6 @@ var getInfo = function (){
     var userName = document.querySelector("#name").value;
     var userCountry = document.querySelector("#country").value;
 
-        //#Joke SECTION categories
-        var anyCategoryName = "any"
-        var selectedCategories = [anyCategoryName];
-
-        if(document.getElementById("jokeCustom").checked)
-        {      
-            var anyCategoryName = "";
-            selectedCategories = [];
-            if(document.getElementById("jokeProgramming").checked)
-            {
-                selectedCategories.push("Programming");
-            }
-            if(document.getElementById("jokeMisc").checked)
-            {
-                selectedCategories.push("Miscellaneous");
-            }
-            if(document.getElementById("jokeDark").checked)
-            {
-                selectedCategories.push("Dark");
-            }
-            if(document.getElementById("jokePun").checked)
-            {
-                selectedCategories.push("Pun");
-            }
-            if(document.getElementById("jokeSpooky").checked)
-            {
-                selectedCategories.push("Spooky");
-            }
-            if(document.getElementById("jokeChristmas").checked)
-            {
-                selectedCategories.push("Christmas");
-            }
-    
-            if(selectedCategories.length == 0)
-            {
-                selectedCategories.push(anyCategoryName);
-            }
-        }
-    
         //NEWS CATEGORY
         var newsAny = "any"
         var newsAnyCategory = "any"
@@ -165,36 +126,70 @@ var getInfo = function (){
                 newsSelectedCategories.push(newsAnyCategory);
             }
         }
-  
+        
+        //#Joke SECTION categories
+        var anyCategoryName = "any"
+        var selectedCategories = [anyCategoryName];
 
-    createProfile(selectedCategories,newsSelectedCategories,userName,userCountry)
+        if(document.getElementById("jokeCustom").checked)
+        {      
+            var anyCategoryName = "";
+            selectedCategories = [];
+            if(document.getElementById("jokeProgramming").checked)
+            {
+                selectedCategories.push("Programming");
+            }
+            if(document.getElementById("jokeMisc").checked)
+            {
+                selectedCategories.push("Miscellaneous");
+            }
+            if(document.getElementById("jokeDark").checked)
+            {
+                selectedCategories.push("Dark");
+            }
+            if(document.getElementById("jokePun").checked)
+            {
+                selectedCategories.push("Pun");
+            }
+            if(document.getElementById("jokeSpooky").checked)
+            {
+                selectedCategories.push("Spooky");
+            }
+            if(document.getElementById("jokeChristmas").checked)
+            {
+                selectedCategories.push("Christmas");
+            }
+    
+            if(selectedCategories.length == 0)
+            {
+                selectedCategories.push(anyCategoryName);
+            }
+        }
+    
 
+        var user1 = { 
+            'name' : userName,
+            'country' : userCountry,
+            'joke' : selectedCategories.toString(),
+            'news' : newsSelectedCategories.toString()
+        }
+            globalProfiles[userName] = user1
+    
+            localStorage.setItem(`profiles`, JSON.stringify(globalProfiles));
+    
+            profilesEl.innerHTML = "";
+            render()
+    
 }
 
 
 
 var profilesEl = document.getElementById("profilesContainer")
 
-var createProfile = function(selectedCategories,newsSelectedCategories,userName,userCountry) {
-    
-
-
-
-    var user1 = { 
-        'name' : userName,
-        'country' : userCountry,
-        'joke' : categories,
-        'news' : newsCategories
-    }
-        globalProfiles[userName] = user1
-
-        localStorage.setItem(`profiles`, JSON.stringify(globalProfiles));
-
-}
 
 var render = function(){
 
-    
+
     for (userName in globalProfiles){
         console.log(globalProfiles[userName].name)
 
