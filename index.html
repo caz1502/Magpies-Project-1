@@ -69,19 +69,149 @@
               />
             </div>
 
-            <label class="uk-form-label uk-text-default" for="form-stacked-text"
-              >Location</label
-            >
-            <div class="uk-margin uk-inline">
-              <span class="uk-form-icon" uk-icon="icon: location"></span>
-              <input
-                class="uk-input uk-form-width-large"
-                id="location"
-                type="text"
-                placeholder="Adelaide"
-              />
+            <div class="uk-form-select" data-uk-form-select>
+              <span>Select a country</span>
+              <select id="country">
+                <option value="au">Australia</option>
+                <option value="in">India</option>
+                <option value="ph">Philippines</option>
+                <option value="br">Brazil</option>
+              </select>
             </div>
 
+            <!--NEWS-->
+            <div class="uk-margin-small">
+              <label
+                class="uk-form-label uk-text-default"
+                for="form-stacked-text"
+                >News Category</label
+              >
+            </div>
+
+            <div class="uk-panel uk-panel-scrollable">
+              <ul class="uk-list">
+                <li>
+                  <label
+                    ><input
+                      class="uk-radio"
+                      id="newsAny"
+                      type="radio"
+                      name="radio2"
+                    />
+                    Any</label
+                  >
+                </li>
+                <li>
+                  <label
+                    ><input
+                      class="uk-radio"
+                      id="newsCustom"
+                      type="radio"
+                      name="radio2"
+                    />
+                    Custom:</label
+                  >
+                  <ul>
+                    <table class="uk-table">
+                      <tbody>
+                        <tr
+                          class="
+                            uk-grid uk-grid-column-small uk-child-width-1-3@s
+                          "
+                        >
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="newsGeneral"
+                                  type="checkbox"
+                                />
+                                General</label
+                              >
+                            </li>
+                          </td>
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="newsBusiness"
+                                  type="checkbox"
+                                />
+                                Business</label
+                              >
+                            </li>
+                          </td>
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="newsEntertainment"
+                                  type="checkbox"
+                                />
+                                Entertainment</label
+                              >
+                            </li>
+                          </td>
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="newsHealth"
+                                  type="checkbox"
+                                />
+                                Health</label
+                              >
+                            </li>
+                          </td>
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="newsScience"
+                                  type="checkbox"
+                                />
+                                Science</label
+                              >
+                            </li>
+                          </td>
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="newsSports"
+                                  type="checkbox"
+                                />
+                                Sports</label
+                              >
+                            </li>
+                          </td>
+                          <td class="uk-padding-remove">
+                            <li>
+                              <label
+                                ><input
+                                  class="uk-checkbox"
+                                  id="newsTechnology"
+                                  type="checkbox"
+                                />
+                                Technology</label
+                              >
+                            </li>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <!-- JOKE CATEGORY -->
             <div class="uk-margin-small">
               <label
                 class="uk-form-label uk-text-default"
@@ -214,7 +344,11 @@
           >
             Cancel
           </button>
-          <button class="uk-button uk-button-primary" id="save" type="button">
+          <button
+            class="uk-button uk-button-primary uk-modal-close"
+            id="save"
+            type="button"
+          >
             Save
           </button>
         </p>

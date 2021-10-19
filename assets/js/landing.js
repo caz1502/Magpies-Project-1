@@ -43,17 +43,14 @@ jokeCustom.addEventListener('click',function(event){
 
 var getInfo = function (){
     var userName = document.querySelector("#name").value;
-    var userLocation = document.querySelector("#location").value;
+    var userCountry = document.querySelector("#country").value;
 
     localStorage.setItem("name ", userName);
-    localStorage.setItem("location", userLocation);
+    localStorage.setItem("country", userCountry);
 
-        //#SECTION categories
+        //#Joke SECTION categories
         var anyCategoryName = "any"
         var selectedCategories = [anyCategoryName];
-        if(document.getElementById('jokeCustom').checked){
-            console.log("ohhhyeahhh");
-        } 
 
         if(document.getElementById("jokeCustom").checked)
         {      
@@ -90,96 +87,60 @@ var getInfo = function (){
             }
         }
     
-
-    /*if (jokeProgramming.checked){
-        jokeProgramming = true
-    } else {
-        jokeProgramming = false
-    }
-
-    if (jokeMisc.checked){
-        jokeMisc = true
-    }  else {
-        jokeMisc = false
-    }
-
-
-    if (jokeDark.checked){
-        jokeDark = true
-    }  else {
-        jokeDark = false
-    }
-
-
-    if (jokePun.checked){
-        jokePun = true
-    }  else {
-        jokePun = false
-    }
-
-
-    if (jokeSpooky.checked){
-        jokeSpooky = true
-    }  else {
-        jokeSpooky = false
-    }
-
-
-    if (jokeChristmas.checked){
-        jokeChristmas = true
-    } else {
-        jokeChristmas = false
-    } 
-
-
-
-    var joke = {
-
-        jokeAny: jokeAny,
-        jokeCustom: jokeCustom,
-        jokeProgramming: jokeProgramming,
-        jokeMisc: jokeMisc,
-        jokeDark: jokeDark,
-        jokePun: jokePun,
-        jokeSpooky: jokeSpooky,
-        jokeChristmas: jokeChristmas
+        //NEWS CATEGORY
+        var newsAny = "any"
+        var newsAnyCategory = "any"
+        var newsSelectedCategories = [newsAny];
+        if(document.getElementById('newsCustom').checked){
+            console.log("ohhhyeahhh");
         } 
-        
+
+        if(document.getElementById("newsCustom").checked)
+        {      
+            var newsAny = "";
+            newsSelectedCategories = [];
+            if(document.getElementById("newsGeneral").checked)
+            {
+                newsSelectedCategories.push("General");
+            }
+            if(document.getElementById("newsBusiness").checked)
+            {
+                newsSelectedCategories.push("Business");
+            }
+            if(document.getElementById("newsEntertainment").checked)
+            {
+                newsSelectedCategories.push("Entertainment");
+            }
+            if(document.getElementById("newsHealth").checked)
+            {
+                newsSelectedCategories.push("Health");
+            }
+            if(document.getElementById("newsScience").checked)
+            {
+                newsSelectedCategories.push("Science");
+            }
+            if(document.getElementById("newsSports").checked)
+            {
+                newsSelectedCategories.push("Sports");
+            }
+            if(document.getElementById("newsTechnology").checked)
+            {
+                newsSelectedCategories.push("Technology");
+            }
     
-
-        createProfile(joke,userName)
-
-}
-
-var profilesEl = document.getElementById("profilesContainer")
-
-var createProfile = function(joke,userName) {
-    var newButton = document.createElement('button')
-    newButton.classList = 'uk-button uk-button-secondary uk-border-rounded uk-box-shadow-small uk-margin-auto-vertical'
-    newButton.setAttribute('type','button')
-
-    var newA = document.createElement('a')
-    newA.setAttribute('href', 'index2.html')
-
-    var newSpan = document.createElement('span')
-    newSpan.textContent = userName
-
-    newButton.appendChild(newSpan)
-    newA.appendChild(newButton)
-    profilesEl.appendChild(newA)
-
-    localStorage.setItem("joke", JSON.stringify (joke));
-
-    console.log(joke)
-}
-*/
-    createProfile(selectedCategories,userName)
+            if(newsSelectedCategories.length == 0)
+            {
+                newsSelectedCategories.push(newsAnyCategory);
+            }
+        }
+  
+    createProfile(selectedCategories,newsSelectedCategories,userName)
 
 
 }
 var profilesEl = document.getElementById("profilesContainer")
 
-var createProfile = function(selectedCategories,userName) {
+var createProfile = function(selectedCategories,newsSelectedCategories,userName) {
     var newButton = document.createElement('button')
     newButton.classList = 'uk-button uk-button-secondary uk-border-rounded uk-box-shadow-small uk-margin-auto-vertical'
     newButton.setAttribute('type','button')
@@ -194,8 +155,8 @@ var createProfile = function(selectedCategories,userName) {
     newA.appendChild(newButton)
     profilesEl.appendChild(newA)
     var categories = selectedCategories.join()
-    console.log(categories)
 
     localStorage.setItem("selectedCategories", categories);
+    localStorage.setItem("newsCategories", newsSelectedCategories);
 
 }
