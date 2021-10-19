@@ -175,11 +175,8 @@ var getInfo = function (){
 
 var profilesEl = document.getElementById("profilesContainer")
 
-var createProfile = function(selectedCategories,newsSelectedCategories,userName,userCountry) {
+var createProfile = function(newsCategories,categories,userName,userCountry) {
     
-
-
-
     var user1 = { 
         'name' : userName,
         'country' : userCountry,
@@ -190,11 +187,14 @@ var createProfile = function(selectedCategories,newsSelectedCategories,userName,
 
         localStorage.setItem(`profiles`, JSON.stringify(globalProfiles));
 
+        profilesEl.innerHTML = "";
+        render()
+
 }
 
 var render = function(){
 
-    
+
     for (userName in globalProfiles){
         console.log(globalProfiles[userName].name)
 
