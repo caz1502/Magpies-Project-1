@@ -8,6 +8,18 @@ var jokeChristmas = document.querySelector("#jokeChristmas");
 var jokeAny = document.querySelector("#jokeAny");
 var jokeCustom = document.querySelector("#jokeCustom");
 
+var newsAny = document.querySelector("#newsAny");
+var newsCustom = document.querySelector("#newsCustom");
+var newsGeneral = document.querySelector("#newsGeneral");
+var newsBusiness = document.querySelector("#newsBusiness");
+var newsEntertainment = document.querySelector("#newsEntertainment");
+var newsHealth = document.querySelector("#newsHealth");
+var newsScience = document.querySelector("#newsScience");
+var newsSports = document.querySelector("#newsSports");
+var newsTechnology = document.querySelector("#newsTechnology");
+
+var globalProfiles = JSON.parse(localStorage.getItem('profiles')) || {}
+
 var saveBtn = document.querySelector("#save")
 
 saveBtn.addEventListener('click',function(event) {
@@ -15,7 +27,33 @@ saveBtn.addEventListener('click',function(event) {
     getInfo();
 });
 
-jokeAny.addEventListener('click',function(event){
+newsAny.addEventListener('click',function(){
+    newsAny = true
+    newsCustom = false
+    newsGeneral.disabled = true;
+    newsBusiness.disabled = true;
+    newsEntertainment.disabled = true;
+    newsHealth.disabled = true;
+    newsScience.disabled = true;
+    newsSports.disabled = true;
+    newsTechnology.disabled = true;
+
+})
+
+newsCustom.addEventListener('click',function(){
+    newsAny = false
+    newsCustom = true
+    newsGeneral.disabled = false;
+    newsBusiness.disabled = false;
+    newsEntertainment.disabled = false;
+    newsHealth.disabled = false;
+    newsScience.disabled = false;
+    newsSports.disabled = false;
+    newsTechnology.disabled = false;
+
+})
+
+jokeAny.addEventListener('click',function(){
     jokeAny = true
     jokeCustom = false
     jokeProgramming.disabled = true;
@@ -27,7 +65,7 @@ jokeAny.addEventListener('click',function(event){
 
 })
 
-jokeCustom.addEventListener('click',function(event){
+jokeCustom.addEventListener('click',function(){
     jokeAny = false
     jokeCustom = true
     jokeProgramming.disabled = false;
@@ -44,9 +82,6 @@ jokeCustom.addEventListener('click',function(event){
 var getInfo = function (){
     var userName = document.querySelector("#name").value;
     var userCountry = document.querySelector("#country").value;
-
-    localStorage.setItem("name ", userName);
-    localStorage.setItem("country", userCountry);
 
         //#Joke SECTION categories
         var anyCategoryName = "any"
@@ -91,9 +126,6 @@ var getInfo = function (){
         var newsAny = "any"
         var newsAnyCategory = "any"
         var newsSelectedCategories = [newsAny];
-        if(document.getElementById('newsCustom').checked){
-            console.log("ohhhyeahhh");
-        } 
 
         if(document.getElementById("newsCustom").checked)
         {      
@@ -134,13 +166,18 @@ var getInfo = function (){
             }
         }
   
-    createProfile(selectedCategories,newsSelectedCategories,userName)
 
+    createProfile(selectedCategories,newsSelectedCategories,userName,userCountry)
 
 }
+
+
+
 var profilesEl = document.getElementById("profilesContainer")
 
-var createProfile = function(selectedCategories,newsSelectedCategories,userName) {
+var createProfile = function(selectedCategories,newsSelectedCategories,userName,userCountry) {
+    
+
     var newButton = document.createElement('button')
     newButton.classList = 'uk-button uk-button-secondary uk-border-rounded uk-box-shadow-small uk-margin-auto-vertical'
     newButton.setAttribute('type','button')
@@ -155,8 +192,26 @@ var createProfile = function(selectedCategories,newsSelectedCategories,userName)
     newA.appendChild(newButton)
     profilesEl.appendChild(newA)
     var categories = selectedCategories.join()
+    var newsCategories = newsSelectedCategories.join()
 
-    localStorage.setItem("selectedCategories", categories);
-    localStorage.setItem("newsCategories", newsSelectedCategories);
+    var user1 = { 
+        'name' : userName,
+        'country' : userCountry,
+        'joke' : categories,
+        'news' : newsCategories
+    }
+        globalProfiles[userName] = user1
+
+        localStorage.setItem(`profiles`, JSON.stringify(globalProfiles));
 
 }
+
+var render = function(){
+
+    for (userName in globalProfiles){
+        console.log(globalProfiles[userName].name)
+    }
+    console.log(globalProfiles)
+}
+
+render()
