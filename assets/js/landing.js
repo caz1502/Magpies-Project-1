@@ -48,7 +48,50 @@ var getInfo = function (){
     localStorage.setItem("name ", userName);
     localStorage.setItem("location", userLocation);
 
-    if (jokeProgramming.checked){
+        //#SECTION categories
+        var anyCategoryName = "any"
+        var selectedCategories = [anyCategoryName];
+        if(document.getElementById('jokeCustom').checked){
+            console.log("ohhhyeahhh");
+        } 
+
+        if(document.getElementById("jokeCustom").checked)
+        {      
+            var anyCategoryName = "";
+            selectedCategories = [];
+            if(document.getElementById("jokeProgramming").checked)
+            {
+                selectedCategories.push("Programming");
+            }
+            if(document.getElementById("jokeMisc").checked)
+            {
+                selectedCategories.push("Miscellaneous");
+            }
+            if(document.getElementById("jokeDark").checked)
+            {
+                selectedCategories.push("Dark");
+            }
+            if(document.getElementById("jokePun").checked)
+            {
+                selectedCategories.push("Pun");
+            }
+            if(document.getElementById("jokeSpooky").checked)
+            {
+                selectedCategories.push("Spooky");
+            }
+            if(document.getElementById("jokeChristmas").checked)
+            {
+                selectedCategories.push("Christmas");
+            }
+    
+            if(selectedCategories.length == 0)
+            {
+                selectedCategories.push(anyCategoryName);
+            }
+        }
+    
+
+    /*if (jokeProgramming.checked){
         jokeProgramming = true
     } else {
         jokeProgramming = false
@@ -86,7 +129,7 @@ var getInfo = function (){
         jokeChristmas = true
     } else {
         jokeChristmas = false
-    }
+    } 
 
 
 
@@ -100,7 +143,9 @@ var getInfo = function (){
         jokePun: jokePun,
         jokeSpooky: jokeSpooky,
         jokeChristmas: jokeChristmas
-        }
+        } 
+        
+    
 
         createProfile(joke,userName)
 
@@ -126,4 +171,31 @@ var createProfile = function(joke,userName) {
     localStorage.setItem("joke", JSON.stringify (joke));
 
     console.log(joke)
+}
+*/
+    createProfile(selectedCategories,userName)
+
+
+}
+var profilesEl = document.getElementById("profilesContainer")
+
+var createProfile = function(selectedCategories,userName) {
+    var newButton = document.createElement('button')
+    newButton.classList = 'uk-button uk-button-secondary uk-border-rounded uk-box-shadow-small uk-margin-auto-vertical'
+    newButton.setAttribute('type','button')
+
+    var newA = document.createElement('a')
+    newA.setAttribute('href', 'index2.html')
+
+    var newSpan = document.createElement('span')
+    newSpan.textContent = userName
+
+    newButton.appendChild(newSpan)
+    newA.appendChild(newButton)
+    profilesEl.appendChild(newA)
+    var categories = selectedCategories.join()
+    console.log(categories)
+
+    localStorage.setItem("selectedCategories", categories);
+
 }
