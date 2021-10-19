@@ -1,3 +1,5 @@
+var categories = localStorage.getItem("selectedCategories");
+//console.log(categories);
 
 // Time on main Page
 var currentDate = moment().format('ddd Do MMM, h:mm: a');
@@ -55,4 +57,27 @@ $.getJSON("http://ipwhois.app/json/?", function (response) {
     })
 });
 
+// Api Jokes
+const jokeText = document.getElementById("joke")
+const jokeBtn = document.getElementById("jokeBtn")
 
+generateJokes();
+//when you click in the button it will bring a new joke
+jokeBtn.addEventListener("click",  generateJokes);
+
+    async function generateJokes() {
+    //base URL
+    var urlJoke = "https://v2.jokeapi.dev/joke/" + categories;
+    //console.log(urlJoke);
+
+    const res = await fetch(urlJoke)
+    const data = await res.json();
+    //console.log(data);
+    if (data.joke == undefined){
+        joke = `${data.setup} <br /> ${data.delivery}`
+    } else {
+        joke = data.joke
+    }
+    jokeText.innerHTML = joke;
+    
+}
