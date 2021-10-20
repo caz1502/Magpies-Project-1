@@ -38,11 +38,18 @@ GIVEN I need to sample a potential employee's previous work
 WHEN I load their portfolio
 THEN 
 
- ## Team Profile
+## Technologies Used
+
+HTML ( UIKIT / TAILWIND )
+JAVA SCRIPT / JQUERY
+CSS
+API
+
+## Team Profile
 
 The Remarkable Magpies 
 
-![Project 1](./assets/images/Carl.JPG ) ![Project 1](./assets/images/Gustavo.jpg ) ![Project 1](./assets/images/Pasan.JPG ) ![Project 1](./assets/images/caz3.JPG )
+![Project 1](./assets/images/Magpies.png )
 
 ## Website Image
 ![Project 1](./assets/images/) Add image here
