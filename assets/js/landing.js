@@ -23,9 +23,12 @@ var globalProfiles = JSON.parse(localStorage.getItem('profiles')) || {}
 var saveBtn = document.querySelector("#save")
 
 saveBtn.addEventListener('click',function(event) {
+
     event.preventDefault();
     getInfo();
 });
+
+
 
 newsAny.addEventListener('click',function(){
     newsAny = true
@@ -83,6 +86,13 @@ var getInfo = function (){
     var userName = document.querySelector("#name").value;
     var userCountry = document.querySelector("#country").value;
 
+    // Check name input if valid
+
+    if (userName.length < 2){
+        UIkit.notification("Name must be at least 2 characters", {status:'danger'})
+        return false;
+    }
+
         //NEWS CATEGORY
         var newsAny = "any"
         var newsAnyCategory = "any"
@@ -127,7 +137,7 @@ var getInfo = function (){
             }
         }
         
-        //#Joke SECTION categories
+        //JOKE CATEGORIES
         var anyCategoryName = "any"
         var selectedCategories = [anyCategoryName];
 
@@ -167,19 +177,23 @@ var getInfo = function (){
         }
     
 
-        var user1 = { 
-            'name' : userName,
-            'country' : userCountry,
-            'joke' : selectedCategories.toString(),
-            'news' : newsSelectedCategories.toString()
-        }
-            globalProfiles[userName] = user1
+    var user1 = { 
+        'name' : userName,
+        'country' : userCountry,
+        'joke' : selectedCategories.toString(),
+        'news' : newsSelectedCategories.toString()
+    }
+
+    globalProfiles[userName] = user1
+
+    localStorage.setItem(`profiles`, JSON.stringify(globalProfiles));
+
+
+    // Empty profiles container before render
+    profilesEl.innerHTML = "";
     
-            localStorage.setItem(`profiles`, JSON.stringify(globalProfiles));
-    
-            profilesEl.innerHTML = "";
-            render()
-    
+    render()
+
 }
 
 
@@ -191,12 +205,10 @@ var render = function(){
 
 
     for (userName in globalProfiles){
-        console.log(globalProfiles[userName].name)
-
         var newButton = document.createElement('button')
         newButton.classList = 'uk-button uk-button-secondary uk-border-rounded uk-box-shadow-small uk-margin-auto-vertical'
         newButton.setAttribute('type','button')
-    
+        newButton.setAttribute('id','profileBtn')
         var newA = document.createElement('a')
         newA.setAttribute('href', 'index2.html')
     
