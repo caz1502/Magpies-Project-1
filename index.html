@@ -10,30 +10,35 @@
       href="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/css/uikit.min.css"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-
-    <title>Document</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/images/Favicon.jpg"
+      sizes="36x36"
+    />
+    <title>Day Maker</title>
   </head>
 
   <body>
     <!-- NavBar -->
-    <nav class="uk-navbar-container uk-background-secondary" uk-navbar>
+    <nav
+      class="uk-navbar-container uk-background-secondary"
+      id="nav-container"
+      uk-navbar
+    >
       <div class="uk-navbar-center">
-        <a class="uk-navbar-item uk-logo" href="#">Day Maker</a>
-      </div>
-      <div class="uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="#">Day/Time</a>
+        <span class="uk-navbar-item uk-logo" href="#" id="title"
+          >Day Maker</span
+        >
       </div>
     </nav>
 
     <!-- This is a button toggling the modal -->
     <div class="container uk-position-center">
       <h2 class="uk-heading-line uk-text-center">
-        <span>Select a profile</span>
+        <span id="select">Select a profile</span>
       </h2>
-      <div
-        class="uk-height-medium uk-flex uk-flex-center"
-        id="profilesContainer"
-      >
+      <div class="uk-height-medium uk-flex uk-flex-center">
         <button
           class="
             uk-button
@@ -45,9 +50,13 @@
           type="button"
           uk-toggle="target: #modal-example"
         >
-          <span uk-icon="icon: plus; ratio: 3.5"></span>
+          <span
+            uk-icon="icon: plus; ratio: 3.5"
+            title="Create a profile"
+          ></span>
         </button>
       </div>
+      <div id="profilesContainer" class="uk-flex uk-flex-center"></div>
     </div>
 
     <!-- This is the modal -->
@@ -55,7 +64,7 @@
       <div class="uk-modal-dialog uk-modal-body">
         <h2 class="uk-modal-title">Create a profile</h2>
         <form>
-          <fieldset class="uk-fieldset">
+          <fieldset class="uk-fieldset" id="form">
             <label class="uk-form-label uk-text-default" for="form-stacked-text"
               >Name</label
             >
@@ -66,11 +75,12 @@
                 id="name"
                 type="text"
                 placeholder="John Doe"
+                minlength="2"
               />
             </div>
 
-            <div class="uk-form-select" data-uk-form-select>
-              <span>Select a country</span>
+            <div class="uk-form-select uk-margin-small" data-uk-form-select>
+              <span>Select your country</span>
               <select id="country">
                 <option value="au">Australia</option>
                 <option value="in">India</option>
