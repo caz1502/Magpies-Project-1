@@ -61,23 +61,25 @@
     </header>
     <!-- news -->
     <div class="main">
-      <div class="uk-grid uk-grid-collapse uk-child-width-expand@s uk-text-center">
+      <div class="uk-grid uk-grid-medium uk-child-width-expand@s uk-text-center uk-grid-match uk-grid-divider">
         <div class="app">
-        <div class="screen main-screen">
-          <div class="logo">NewsApp</div>
-          <div class="catagories"></div>
-          <div class="news-list"></div>
+          <div class="screen main-screen">
+            <div class="logo">
+              News Headlines
+            </div>
+            <div class="catagories"></div>
+            <div class="news-list"></div>
+          </div>
+          <div class="screen news-screen hidden">
+            <div class="header">
+              <div class="back-btn">&lt;</div>
+              <div class="title"></div>
+            </div>
+            <div class="news-frame">
+              <iframe id="news-frame"></iframe>
+            </div>
+          </div>
         </div>
-        <div class="screen news-screen hidden">
-          <div class="header">
-            <div class="back-btn">&lt;</div>
-            <div class="title"></div>
-          </div>
-          <div class="news-frame">
-            <iframe id="news-frame"></iframe>
-          </div>
-          </div>
-      </div>
     
         <!-- joke -->
         <div>
@@ -85,8 +87,7 @@
             <div class="uk-text-center uk-animation-toggle">
               <button
                 id="jokeBtn"
-                class="uk-button uk-button-primary uk-animation-shake"
-              >
+                class="uk-button uk-button-primary uk-animation-shake">
                 Make me laugh!
               </button>
               <div

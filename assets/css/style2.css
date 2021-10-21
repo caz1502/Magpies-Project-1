@@ -1,6 +1,6 @@
 /* setting body to viewport */
 * {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -64,36 +64,32 @@ a:hover {
 }
 
 //News App
-.news-container {
+.app {
+  position: flex;
   width: 50%;
   height: 10%;
-}
-.app {
-  position: left;
-  overflow-y: scroll;
-  //width: 100%;
-  //height: 20%;
-  //max-width: 320px;
-  //max-height: 320px;
+  max-width: 640px;
   border: 1px solid #ddd;
-  left: 50%;
-  top: 50px;
+  left: 100%;
+  top: 0px;
+  transform: translateX(-50%);
   background: #fff;
 }
 .app .screen {
-  position: left;
+  position: relative;
   border-style: solid;
-  border-color: red;
+  border-color: yellow;
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 50%;
+  height: 12%;
 }
 .hidden {
   display: none;
 }
 .main-screen {
-  overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .main-screen .logo {
   font-size: 18px;
@@ -114,28 +110,28 @@ a:hover {
 }
 .main-screen .catagories > div {
   padding: 10px 20px;
-  background: #ddd;
-  color: #111;
-  border-radius: 20px;
+  background: #1e87f0;
+  color: white;
+  border-radius: 15px 50px;
   text-align: center;
   cursor: pointer;
 }
 .main-screen .catagories > div.active {
   background: #111;
-  color: #fff;
+  color: #1e87f0;
 }
 .main-screen .news-list {
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 5px;
 }
 .main-screen .news-list > .item {
-  border: 1px solid #ddd;
+  border: 1px solid #1e87f0;
   cursor: pointer;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
-  max-width: 280px;
+  white-space: normal;
 }
 .main-screen .news-list > .item .thumbnail img {
   width: 100%;
@@ -143,10 +139,10 @@ a:hover {
   object-fit: contain;
 }
 .main-screen .news-list > .item .details {
-  padding: 10px;
+  padding: 5px;
 }
 .main-screen .news-list > .item .details h2 {
-  font-size: 16px;
+  font-size: 15px;
   border-bottom: 10px;
 }
 .main-screen .news-list > .item p {
