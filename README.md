@@ -62,7 +62,7 @@ The Remarkable Magpies
 
 ## Wireframe
 
-![Wireframe](./assets/Wireframe/) 
+![Wireframe](./assets/images/Wireframe.jpg) 
 
 ## Website Image
 ![Project 1](./assets/images/DeployedLanding.JPG)
