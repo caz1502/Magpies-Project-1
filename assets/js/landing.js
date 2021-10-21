@@ -159,7 +159,7 @@ var getInfo = function (){
     // Empty profiles container before render
     profilesEl.innerHTML = "";
 
-=======
+
     render()
 }
 
