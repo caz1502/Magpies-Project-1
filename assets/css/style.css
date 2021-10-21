@@ -1,5 +1,50 @@
-body {
-  height: 100vh;
-  width: 100vw;
-  background-color: #c9e9f6;
-}
+body {import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+  body {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../images/cyan-pink-gradient-wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  #nav-container {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #title {
+    font-family: Satisfy;
+    font-size: 40px;
+    color: white;
+  }
+  
+  #select {
+    color: white;
+  }
+  #form {
+    min-width: 0;
+  }
+  
+  #profileBtn {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  @media screen and (max-width: 410px) {
+    #profilesContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  #profilesContainer button {
+    margin: 20px;
+  }
+  
+  .uk-form-select {
+    margin-top: 10px;
+  }
+  
