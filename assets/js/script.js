@@ -5,7 +5,7 @@ var categories = user.joke;
 // console.log(categories)
 
 // Time on main Page
-var currentDate = moment().format('ddd Do MMM, h:mm: a');
+var currentDate = moment().format('ddd Do MMM, h:mm a');
 $("#time").text(currentDate);
 // console.log(currentDate);
 
@@ -14,11 +14,11 @@ var myDate = new Date();
 var hrs = myDate.getHours();
 var greet;
 if (hrs < 12)
-    greet = 'Good Morning';
+    greet = 'Good Morning, ' + user.name;
 else if (hrs >= 12 && hrs <= 17)
-    greet = 'Good Afternoon';
+    greet = 'Good Afternoon, ' + user.name;
 else if (hrs >= 17 && hrs <= 24)
-    greet = 'Good Evening';
+    greet = 'Good Evening, ' + user.name;
 document.getElementById('daymaker').innerHTML =
     greet;
 
@@ -84,3 +84,42 @@ jokeBtn.addEventListener("click",  generateJokes);
     jokeText.innerHTML = joke;
     
 }
+
+// NEWS
+
+var newsEl = document.getElementById("news-container");
+
+var getNews = function () {
+    var newsApi = "http://api.mediastack.com/v1/news?access_key=df2ab7a9fee8d24e0c83c9b2872ca8b9&sources=en&categories=general&limit=5"
+
+    fetch(newsApi)
+      .then(function (response) {
+        if (response.ok) {
+          console.log(response);
+          response.json().then(function (data) {
+            console.log(data);
+            console.log(data.data[0].title);
+
+            for (var i=0; i < data.data.length; i++){
+                var cardDiv = document.createElement('div')
+                cardDiv.setAttribute("class","uk-card uk-card-default uk-card-body")
+                var cardTitle = document.createElement('h3')
+                cardTitle.setAttribute("class","uk-card-title")
+                cardTitle.textContent = data.data[i].title
+                cardDiv.appendChild(cardTitle)
+                var cardP = document.createElement('p')
+                cardP.textContent = data.data[i].description
+                cardDiv.appendChild(cardP)
+                newsEl.appendChild(cardDiv)
+
+            }
+
+          });
+        } else {
+          alert('Error: ' + response.statusText);
+        }
+      })
+  };
+
+  getNews();
+

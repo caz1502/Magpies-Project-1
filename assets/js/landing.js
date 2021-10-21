@@ -17,6 +17,7 @@ var newsSports = document.querySelector("#newsSports");
 var newsTechnology = document.querySelector("#newsTechnology");
 var globalProfiles = JSON.parse(localStorage.getItem('profiles')) || {}
 var saveBtn = document.querySelector("#save")
+
 saveBtn.addEventListener('click',function(event) {
     event.preventDefault();
     getInfo();
@@ -159,11 +160,11 @@ var getInfo = function (){
     // Empty profiles container before render
     profilesEl.innerHTML = "";
 
-
     render()
 }
 
 var profilesEl = document.getElementById("profilesContainer")
+
 var render = function(){
     for (userName in globalProfiles){
         var newButton = document.createElement('button')
@@ -175,35 +176,18 @@ var render = function(){
         newButton.dataset.name = userName;
         var newSpan = document.createElement('span')
         newSpan.textContent = userName
-
-        newButton.appendChild(newSpan)
-        newA.appendChild(newButton)
-        profilesEl.appendChild(newA)
-        newButton.addEventListener('click',function(event) {
-            var userName = event.currentTarget.dataset.name;
-            event.preventDefault();
-            localStorage.setItem('user', JSON.stringify(globalProfiles[userName]));
-            var redirectURL = './index2.html'
-            window.location.replace(redirectURL);
-        });
-
         newButton.appendChild(newSpan)
         newA.appendChild(newButton)
         profilesEl.appendChild(newA)
 
-        newButton.addEventListener('click',function(event) {
+            newButton.addEventListener('click',function(event) {
             var userName = event.currentTarget.dataset.name;
-
             event.preventDefault();
             localStorage.setItem('user', JSON.stringify(globalProfiles[userName]));
-
             var redirectURL = './index2.html'
-            window.location.replace(redirectURL);
-            
+            window.open(redirectURL,'_blank')
         });
-
     }
 
-    console.log(globalProfiles)
 }
 render()
