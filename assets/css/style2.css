@@ -65,7 +65,7 @@ a:hover {
 
 //News App
 .app {
-  position: flex;
+  position: relative;
   width: 50%;
   height: 10%;
   max-width: 640px;
