@@ -1,6 +1,6 @@
 ## Project 1 - Day Maker
 
-Live Application Link 👀 **https://caz1502.github.io/Add link here/ **
+Live Application Link 👀 **https://caz1502.github.io/Magpies-Project-1/ **
 
 ## Your Task
 
@@ -34,9 +34,18 @@ Benefit: I have a webpage to make my day :)
 
 ## Acceptance Criteria - Update the acceptance Criteria
 
-GIVEN I need to sample a potential employee's previous work
-WHEN I load their portfolio
-THEN 
+GIVEN 
+WHEN I land on the landing page
+THEN I promted to create a profile
+WHEN I enter the main page
+THEN I see jokes and news based on my profile settings
+WHEN I click on a button in the joke section
+THEN a new joke is refreshed on the page
+WHEN I look for the local temperature
+THEN I see my local weather based on my I.P location
+WHEN I revisit the page
+THEN I prompted to click on my profile to take me to my profile page
+
 
 ## Technologies Used
 
@@ -49,10 +58,14 @@ API
 
 The Remarkable Magpies 
 
-![Project 1](./assets/images/Magpies.png )
+![Team](./assets/images/Magpies.png )
+
+## Wireframe
+
+![Wireframe](./assets/Wireframe/) 
 
 ## Website Image
-![Project 1](./assets/images/) Add image here
+![Project 1](./assets/images/DeployedLanding.JPG)
 
 ## Authors, Acknowledgement, & Resources 🤝
 Teaching Crew at UniSA Coding Bootcamp 🎉
