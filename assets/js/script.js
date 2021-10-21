@@ -1,5 +1,8 @@
-var categories = localStorage.getItem("selectedCategories");
-//console.log(categories);
+var user = JSON.parse(localStorage.getItem("user"));
+// console.log(user);
+
+var categories = user.joke;
+// console.log(categories)
 
 // Time on main Page
 var currentDate = moment().format('ddd Do MMM, h:mm: a');
@@ -67,8 +70,8 @@ jokeBtn.addEventListener("click",  generateJokes);
 
     async function generateJokes() {
     //base URL
-    var urlJoke = "https://v2.jokeapi.dev/joke/" + categories;
-    //console.log(urlJoke);
+    var urlJoke = "https://v2.jokeapi.dev/joke/" + categories + "?blacklistFlags=nsfw,religious,political,racist,sexist,explicit";
+    console.log(urlJoke);
 
     const res = await fetch(urlJoke)
     const data = await res.json();
