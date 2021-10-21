@@ -191,10 +191,12 @@ var getInfo = function (){
 
     // Empty profiles container before render
     profilesEl.innerHTML = "";
-    
+ 
     render()
 
 }
+
+  
 
 
 
@@ -211,15 +213,27 @@ var render = function(){
         newButton.setAttribute('id','profileBtn')
         var newA = document.createElement('a')
         newA.setAttribute('href', 'index2.html')
-    
+        newButton.dataset.name = userName;
         var newSpan = document.createElement('span')
         newSpan.textContent = userName
-    
+
         newButton.appendChild(newSpan)
         newA.appendChild(newButton)
         profilesEl.appendChild(newA)
 
+        newButton.addEventListener('click',function(event) {
+            var userName = event.currentTarget.dataset.name;
+
+            event.preventDefault();
+            localStorage.setItem('user', JSON.stringify(globalProfiles[userName]));
+
+            var redirectURL = './index2.html'
+            window.location.replace(redirectURL);
+            
+        });
+
     }
+
     console.log(globalProfiles)
 }
 
