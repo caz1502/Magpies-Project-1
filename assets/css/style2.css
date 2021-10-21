@@ -1,66 +1,68 @@
-
 /* setting body to viewport */
-* {font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}  
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
 
 body {
-    height: 100vh;
-    width: 100vw;   
+  height: 100vh;
+  width: 100vw;
 }
 
 /* To indent and centre main body */
 .main {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}    
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Header */
 header {
-  
-    padding: 1rem;
-    margin-bottom: 1rem;
-    letter-spacing: .1em;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
 }
 
 #weather,
-#time  {
-    font-size: 2rem;
-    padding-top: 1rem;
+#time {
+  font-size: 2rem;
+  padding-top: 1rem;
 }
 
 #weather a {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 #daymaker {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 /*Footer */
 footer {
-    padding: 1rem;
-    margin-top: 1rem;
+  padding: 1rem;
+  margin-top: 1rem;
 }
 
 #carl,
 #carol,
 #pasan,
 #gustavo {
-    padding-left: 2.5rem;
-    letter-spacing: .1em;    
+  padding-left: 2.5rem;
+  letter-spacing: 0.1em;
 }
 
 .fa {
-    font-size: 1.8rem;      
+  font-size: 1.8rem;
 }
 
 a:hover {
-    font-size: 2.5rem;  
+  font-size: 2.5rem;
 }
 
 #logo {
-    margin-top: .5rem;
-    padding: 1rem;
-    letter-spacing: .1em;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  letter-spacing: 0.1em;
 }
 
+#news-container {
+  width: 100%;
+}
