@@ -27,7 +27,7 @@ document.getElementById('daymaker').innerHTML =
 var APIkey = "5607e4212a787842dbe27c8181889e83";
 // $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=metric&appid=5607e4212a787842dbe27c8181889e83"
 
-$.getJSON("http://ipwhois.app/json/?", function (response) {
+$.getJSON("https://ipwhois.app/json/?", function (response) {
     //console.log(JSON.stringify(response.city));   
     //console.log(JSON.stringify(response, null, 2));
     var currentCity = (response.city);
