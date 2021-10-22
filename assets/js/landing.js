@@ -67,11 +67,13 @@ jokeCustom.addEventListener('click',function(){
 var getInfo = function (){
     var userName = document.querySelector("#name").value;
     var userCountry = document.querySelector("#country").value;
+
     // Check name input if valid
     if (userName.length < 2){
         UIkit.notification("Name must be at least 2 characters", {status:'danger'})
         return false;
     }
+    
         //NEWS CATEGORY
         var newsAny = "any"
         var newsAnyCategory = "any"
@@ -157,6 +159,7 @@ var getInfo = function (){
     }
     globalProfiles[userName] = user1
     localStorage.setItem(`profiles`, JSON.stringify(globalProfiles));
+
     // Empty profiles container before render
     profilesEl.innerHTML = "";
     avatarEl.innerHTML = "";
@@ -178,7 +181,7 @@ var render = function(){
         var newA = document.createElement('a')
         newA.setAttribute('href', 'index2.html')
         newA.setAttribute('class', 'uk-align-center uk-flex uk-flex-column profileA')
-        newButton.dataset.name = userName;
+        newDiv.dataset.name = userName;
         var newSpan = document.createElement('span')
         newSpan.textContent = userName
         newButton.appendChild(newSpan)
@@ -195,10 +198,11 @@ var render = function(){
         profilesEl.appendChild(newDiv)
 
 
-            newButton.addEventListener('click',function(event) {
-            var userName = event.currentTarget.dataset.name;
+            newDiv.addEventListener('click',function(event) {
+            var user = event.currentTarget.dataset.name;
+            console.log(user)
             event.preventDefault();
-            localStorage.setItem('user', JSON.stringify(globalProfiles[userName]));
+            localStorage.setItem('user', JSON.stringify(globalProfiles[user]));
             var redirectURL = './index2.html'
             window.open(redirectURL,'_blank')
         });
