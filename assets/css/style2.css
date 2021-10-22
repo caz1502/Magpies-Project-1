@@ -6,8 +6,9 @@
 body {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
+
 }
 
 /* To indent and centre main body */
@@ -15,6 +16,8 @@ body {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 50px;
+  border: solid black 1rem;
 }
 
 /* Header */
@@ -42,20 +45,6 @@ footer {
   margin-top: auto;
 }
 
-#carl,
-#carol,
-#pasan,
-#gustavo { 
-letter-spacing: 0.1em;
-}
-
-.fa {
-  font-size: 1.8rem;
-}
-
-a:hover {
-  font-size: 2.5rem;
-}
 
 #logo {
   margin-top: 0.5rem;
@@ -66,3 +55,8 @@ a:hover {
 #news-container {
   width: 100%;
 }
+
+.uk-panel-scrollable {
+  border:none
+}
+

@@ -1,0 +1,65 @@
+Create a one page proposal that contains:
+
+Project title:
+---------------
+Day Maker
+
+
+Project description
+--------------------
+App/Webpage that provides some light hearted humour for the day -  Jokes as well as more serious matters ie News
+User Profile can be set up
+
+
+User story
+-----------
+As a user: As Unistudent
+
+I want: An app that provides some humour, and news and weather
+
+Benefit: I have a webpage to make my day :)
+
+
+Wireframe or sketch of the design
+------------------------------------
+Done
+
+
+APIs
+---------
+ Click for Random Joke of the Day - MVP
+ API URL for joke (safe mode):
+ https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit
+
+
+ News  - IS THIS IS MVP 
+ https://newsdata.io/api/1/news?apikey=pub_1717c18615f2bdf53835ac9a05e519a61b42&q=Australia
+
+
+ Weather Feed - THIS IS SECONDARY
+ https://api.openweathermap.org/data/2.5/weather?q=london&%22&appid=5607e4212a787842dbe27c8181889e83
+
+
+
+Rough breakdown of tasks.
+----------------------------------------------------------------
+ 11 days - thursay 14th, to Sunday 24th
+
+
+ Thursday night task - Bootstrap alternative to use,  Html code - together
+ and then set the responsibilites /tasks
+ Landing Page
+ Form input
+
+ Main Page
+ Header
+ User Profile
+ news section
+ Joke section
+ Footer
+
+Admin Tasks - Carol
+User Story - README.md / Wireframe and the task is updatred - Carol 
+Presentation is Monday - Group
+Presntation Design - Carol 
+
