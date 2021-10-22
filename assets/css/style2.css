@@ -83,11 +83,10 @@ a:hover {
   background: #fff;
 }
 .app .screen {
-  background-color: #ffd000;
+  background-color: #ddd;
   position: relative;
-  flex: 1; /* THIS NEW LINE */
   border-style: solid;
-  border-color: yellow;
+  border-color: #fff;
   top: 0px;
   left: 0px;
   width: 100%;
