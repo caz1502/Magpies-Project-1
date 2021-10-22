@@ -38,7 +38,15 @@ body {
 }
 
 .avatar {
-  padding-left: 60px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#profilesContainer {
+  display: flex;
+  justify-content: space-between;
 }
 
 .avatarImg {
@@ -50,17 +58,25 @@ body {
 }
 
 @media screen and (max-width: 410px) {
-  #profilesContainer {
+  .container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-}
 
-#profilesContainer button {
-  margin: 20px;
-}
+  #profilesContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-.uk-form-select {
-  margin-top: 10px;
+  #profilesContainer button {
+    margin: 20px;
+  }
+
+  .avatar {
+    padding: 0;
+  }
+  .uk-form-select {
+    margin-top: 10px;
+  }
 }
