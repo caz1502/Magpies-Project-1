@@ -159,26 +159,41 @@ var getInfo = function (){
     localStorage.setItem(`profiles`, JSON.stringify(globalProfiles));
     // Empty profiles container before render
     profilesEl.innerHTML = "";
-
+    avatarEl.innerHTML = "";
+    document.getElementById("userForm").reset();
     render()
 }
 
 var profilesEl = document.getElementById("profilesContainer")
+var avatarEl = document.getElementById("profilesAvatar")
 
 var render = function(){
     for (userName in globalProfiles){
+        var newDiv = document.createElement('div')
+        newDiv.setAttribute("id",userName)
+        newDiv.setAttribute("class","avatar")
         var newButton = document.createElement('button')
-        newButton.classList = 'uk-button uk-button-secondary uk-border-rounded uk-box-shadow-small uk-margin-auto-vertical'
+        newButton.setAttribute('class','uk-button uk-button-secondary uk-border-rounded uk-box-shadow-small uk-margin-auto-vertical profileBtn')
         newButton.setAttribute('type','button')
-        newButton.setAttribute('id','profileBtn')
         var newA = document.createElement('a')
         newA.setAttribute('href', 'index2.html')
+        newA.setAttribute('class', 'uk-align-center uk-flex uk-flex-column profileA')
         newButton.dataset.name = userName;
         var newSpan = document.createElement('span')
         newSpan.textContent = userName
         newButton.appendChild(newSpan)
         newA.appendChild(newButton)
-        profilesEl.appendChild(newA)
+        avatarEl.appendChild(newA)
+
+
+        //Avatar
+        var avatarImg = document.createElement('img')
+        avatarImg.setAttribute("src","https://avatars.dicebear.com/api/big-smile/" + userName + ".svg?size=120")
+        avatarImg.setAttribute("class","uk-flex-first avatarImg")
+        newA.appendChild(avatarImg)
+        newDiv.appendChild(newA)
+        profilesEl.appendChild(newDiv)
+
 
             newButton.addEventListener('click',function(event) {
             var userName = event.currentTarget.dataset.name;
@@ -190,4 +205,6 @@ var render = function(){
     }
 
 }
+
+
 render()
