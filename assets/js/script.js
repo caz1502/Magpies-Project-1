@@ -94,7 +94,7 @@ var newCategories = user.news;
 
 var getNews = function () {
     //var newsApi = "http://api.mediastack.com/v1/news?access_key=b4ee083bda9fbe5c973c1deba481b67f&sources=en&sources=" + newCategories + ",-technology&limit=5"
-    var newsApi = "http://api.mediastack.com/v1/news?access_key=b4ee083bda9fbe5c973c1deba481b67f&sources=en&scategories=" + newCategories + "&limit=5"
+    var newsApi = "https://api.mediastack.com/v1/news?access_key=b4ee083bda9fbe5c973c1deba481b67f&sources=en&scategories=" + newCategories + "&limit=5"
 
     console.log(newsApi)
     fetch(newsApi)
