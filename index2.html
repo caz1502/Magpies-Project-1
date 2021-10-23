@@ -11,8 +11,6 @@
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit-icons.min.js"></script>
-    <!-- <link rel="stylesheet" href="css/uikit.min.css" /> -->
-    <!-- <script src="js/uikit.min.js"></script> -->
     <!-- jquery -->
     <link
       rel="stylesheet"
@@ -60,27 +58,42 @@
       </div>
     </header>
     <!-- news -->
-    <div class="main">
-      <div
-        class="uk-grid uk-grid-collapse uk-child-width-expand@s uk-text-center uk-padding"      >
-     
-        <div
-          class="
-            uk-child-width-1-2@m
-            uk-flex
-            uk-flex-row
-            uk-panel
-            uk-panel-scrollable
-          "
-          uk-grid
-          id="news-container"
-          style="height: 45rem"
-        ></div>
-        
+    <div class="main uk-flex-around">
+      <div class="uk-grid uk-grid-collapse uk-child-width-expand@s">
+        <div class="section-div">
+          <h1 class="uk-heading-bullet">
+            News
+            <span
+              id="news-span"
+              uk-tooltip="title: Hello World; delay: 500"
+              uk-icon="info"
+            ></span>
+          </h1>
+
+          <div
+            class="
+              uk-child-width-1-3@m
+              uk-flex
+              uk-flex-row
+              uk-panel
+              uk-panel-scrollable
+            "
+            uk-grid
+            id="news-container"
+          ></div>
+        </div>
         <!-- joke -->
-        <div>
-          <div class="container uk-padding">
-            <div class="uk-text-center uk-animation-toggle">
+        <div class="section-div" id="joke-div">
+          <h1 class="uk-heading-bullet">
+            Joke
+            <span
+              id="joke-span"
+              uk-tooltip="title: Hello World; delay: 500"
+              uk-icon="info"
+            ></span>
+          </h1>
+          <div class="container">
+            <div class="uk-text-center uk-animation-toggle uk-card-default">
               <button
                 id="jokeBtn"
                 class="uk-button uk-button-primary uk-animation-shake"
@@ -100,8 +113,31 @@
     <!-- footer -->
     <footer>
       <div class="uk-grid uk-grid-collapse uk-child-width-expand@s">
-       
-        <div class="uk-text-small uk-text-center uk-text-decoration-none" id="logo">
+        <div class="uk-text-large uk-text-center" id="carl">
+          <a
+            href="https://github.com/carlsantiago"
+            target="_blank"
+            class="fa fa-github uk-text-decoration-none"
+          >
+          </a>
+          carl santiago
+        </div>
+        <div
+          class="uk-text-large uk-text-center uk-text-decoration-none"
+          id="gustavo"
+        >
+          <a
+            href="https://github.com/gharduim"
+            target="_blank"
+            class="fa fa-github uk-text-decoration-none"
+          >
+          </a>
+          gustavo gharduim
+        </div>
+        <div
+          class="uk-text-small uk-text-center uk-text-decoration-none"
+          id="logo"
+        >
           <img
             src="./assets/images/Logo3.jpg"
             alt="Day Maker Logo"
@@ -109,9 +145,32 @@
             height="20px"
           />
           Produced By Remarkable Magpies 2021
-      
+        </div>
+        <div class="uk-text-large uk-text-center" id="pasan">
+          <a
+            href="https://github.com/AsanIlva"
+            target="_blank"
+            class="fa fa-github uk-text-decoration-none"
+          >
+          </a>
+          pasan de silva
+        </div>
+
+        <div class="uk-text-large uk-text-center" id="carol">
+          <a
+            href="https://github.com/caz1502"
+            target="_blank"
+            class="fa fa-github uk-text-decoration-none"
+          >
+          </a>
+          carol shiers
+        </div>
       </div>
-    </div>
+      <!-- Production -->
+      <div
+        class="uk-grid uk-grid-collapse uk-child-width-expand@s"
+        id="logo"
+      ></div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

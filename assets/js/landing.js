@@ -85,31 +85,31 @@ var getInfo = function (){
             newsSelectedCategories = [];
             if(document.getElementById("newsGeneral").checked)
             {
-                newsSelectedCategories.push("general");
+                newsSelectedCategories.push("General");
             }
             if(document.getElementById("newsBusiness").checked)
             {
-                newsSelectedCategories.push("business");
+                newsSelectedCategories.push("Business");
             }
             if(document.getElementById("newsEntertainment").checked)
             {
-                newsSelectedCategories.push("entertainment");
+                newsSelectedCategories.push("Entertainment");
             }
             if(document.getElementById("newsHealth").checked)
             {
-                newsSelectedCategories.push("health");
+                newsSelectedCategories.push("Health");
             }
             if(document.getElementById("newsScience").checked)
             {
-                newsSelectedCategories.push("science");
+                newsSelectedCategories.push("Science");
             }
             if(document.getElementById("newsSports").checked)
             {
-                newsSelectedCategories.push("sports");
+                newsSelectedCategories.push("Sports");
             }
             if(document.getElementById("newsTechnology").checked)
             {
-                newsSelectedCategories.push("technology");
+                newsSelectedCategories.push("Technology");
             }
             if(newsSelectedCategories.length == 0)
             {
@@ -117,7 +117,7 @@ var getInfo = function (){
             }
         }
         //JOKE CATEGORIES
-        var anyCategoryName = "any"
+        var anyCategoryName = "Any"
         var selectedCategories = [anyCategoryName];
         if(document.getElementById("jokeCustom").checked)
         {      
