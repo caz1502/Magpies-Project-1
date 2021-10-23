@@ -2,6 +2,7 @@ var user = JSON.parse(localStorage.getItem("user"));
 console.log(user);
 
 var categories = user.joke;
+//var newCategories = user.news;
 // console.log(categories)
 
 // Time on main Page
@@ -89,16 +90,20 @@ jokeBtn.addEventListener("click",  generateJokes);
 
 var newsEl = document.getElementById("news-container");
 
-var getNews = function () {
-    var newsApi = "http://api.mediastack.com/v1/news?access_key=df2ab7a9fee8d24e0c83c9b2872ca8b9&sources=en&categories=general&limit=5"
+var newCategories = user.news;
 
+var getNews = function () {
+    //var newsApi = "http://api.mediastack.com/v1/news?access_key=b4ee083bda9fbe5c973c1deba481b67f&sources=en&sources=" + newCategories + ",-technology&limit=5"
+    var newsApi = "http://api.mediastack.com/v1/news?access_key=b4ee083bda9fbe5c973c1deba481b67f&sources=en&scategories=" + newCategories + "&limit=5"
+
+    console.log(newsApi)
     fetch(newsApi)
       .then(function (response) {
         if (response.ok) {
           console.log(response);
           response.json().then(function (data) {
             console.log(data);
-            console.log(data.data[0].title);
+            //console.log(data.data[0].title);
 
             for (var i=0; i < data.data.length; i++){
                 var cardDiv = document.createElement('div')
@@ -113,6 +118,11 @@ var getNews = function () {
                 newsEl.appendChild(cardDiv)
 
             }
+            var moreNews = document.createElement('a')
+            moreNews.innerHTML = "More news"
+            moreNews.setAttribute("class","uk-button uk-button-default uk-text-primary uk-text-bold")
+            newsEl.appendChild(moreNews)
+
 
           });
         } else {
@@ -122,4 +132,3 @@ var getNews = function () {
   };
 
   getNews();
-

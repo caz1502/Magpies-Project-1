@@ -75,40 +75,41 @@ var getInfo = function (){
     }
     
         //NEWS CATEGORY
-        var newsAny = "any"
-        var newsAnyCategory = "any"
+        var newsAny = "general,business,entertainment,health,science,sports,technology"
+        var newsAnyCategory = "general,business,entertainment,health,science,sports,technology"
         var newsSelectedCategories = [newsAny];
         if(document.getElementById("newsCustom").checked)
         {      
             var newsAny = "";
+            var newsAnyCategory = "";
             newsSelectedCategories = [];
             if(document.getElementById("newsGeneral").checked)
             {
-                newsSelectedCategories.push("General");
+                newsSelectedCategories.push("general");
             }
             if(document.getElementById("newsBusiness").checked)
             {
-                newsSelectedCategories.push("Business");
+                newsSelectedCategories.push("business");
             }
             if(document.getElementById("newsEntertainment").checked)
             {
-                newsSelectedCategories.push("Entertainment");
+                newsSelectedCategories.push("entertainment");
             }
             if(document.getElementById("newsHealth").checked)
             {
-                newsSelectedCategories.push("Health");
+                newsSelectedCategories.push("health");
             }
             if(document.getElementById("newsScience").checked)
             {
-                newsSelectedCategories.push("Science");
+                newsSelectedCategories.push("science");
             }
             if(document.getElementById("newsSports").checked)
             {
-                newsSelectedCategories.push("Sports");
+                newsSelectedCategories.push("sports");
             }
             if(document.getElementById("newsTechnology").checked)
             {
-                newsSelectedCategories.push("Technology");
+                newsSelectedCategories.push("technology");
             }
             if(newsSelectedCategories.length == 0)
             {
