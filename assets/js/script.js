@@ -102,9 +102,9 @@ var getNews = function () {
 
             for (var i=0; i < data.data.length; i++){
                 var cardDiv = document.createElement('div')
-                cardDiv.setAttribute("class","uk-card uk-card-default uk-card-body")
+                cardDiv.setAttribute("class","uk-card uk-card-default uk-card-body uk-text-left uk-text-small ")
                 var cardTitle = document.createElement('h3')
-                cardTitle.setAttribute("class","uk-card-title")
+                cardTitle.setAttribute("class","uk-card-title uk-text-primary uk-text-bold  uk-text-left")
                 cardTitle.textContent = data.data[i].title
                 cardDiv.appendChild(cardTitle)
                 var cardP = document.createElement('p')
