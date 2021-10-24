@@ -87,8 +87,8 @@ jokeBtn.addEventListener("click",  generateJokes);
 //Fetch for news for several catagories from free mediastack subscription limited to 500 api calls
 let API_KEY = "";
 //http://api.mediastack.com/v1/news?countries=us,in&access_key="+API_KEY+"&categories=
-let newsAPI = "http://api.mediastack.com/v1/news?access_key=df2ab7a9fee8d24e0c83c9b2872ca8b9&sources=en&categories=general&limit=5";
-let dummyImage = "dummy-image.jpg";
+let newsAPI = "http://api.mediastack.com/v1/news?countries=us,in&access_key=8ad5429edbf1d365091033d41df2c7f0&limit=2"+API_KEY+"&categories=";
+let dummyImage = "Magpies-extended-logo.jpg";
 
 //The first element of the selector is returned
 let app = document.querySelector(".app");

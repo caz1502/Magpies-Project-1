@@ -31,7 +31,7 @@
     <link
       rel="icon"
       type="image/png"
-      href="./assets/images/Favicon.jpg"
+      href="assets/images/Logo3.jpg"
       sizes="36x36"
     />
     <title>Day Maker</title>
@@ -59,57 +59,42 @@
   </header>
   <body>
     <!-- news -->
+    <div class="xop-banner"></div>
     <div class="main">
-    </div>
-    <div class="
-    uk-grid
-    container
-    uk-padding
-    uk-child-width-expand@s
-    uk-text-center
-    uk-grid-match
-    uk-grid-divider
-  "></div>
-    <div class="app">
-          <div class="screen main-screen">
-            <div class="point">News Headlines</div>
-            <div class="catagories"></div>
-            <div class="news-list"></div>
-          </div>
-          <div class="screen news-screen hidden">
-            <div class="header">
-              <div class="back-btn">&lt;</div>
-              <div class="title"></div>
+      <div class="site-container">
+        <div class="article-container">
+          <article class="app">
+            <div class="article-content">
+              <div class="screen main-screen">
+                <div class="point">
+                  <a href="#" class="card-type">Click for More News</a>
+                </div>
+                <div class="catagories"></div>
+                <div class="news-list"></div>
+              </div>
+              <div class="screen news-screen hidden">
+                <div class="header">
+                  <div class="back-btn">&lt;</div>
+                  <div class="title"></div>
+                </div>
+                <div class="news-frame">
+                  <iframe id="news-frame"></iframe>
+                </div>
+              </div>
             </div>
-            <div class="news-frame">
-              <iframe id="news-frame"></iframe>
-            </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- joke -->
-        <div>
-          <div class="container uk-padding">
-            <div class="uk-text-center uk-animation-toggle">
-              <button
-                id="jokeBtn"
-                class="uk-button uk-button-primary uk-animation-shake"
-              >
-                Make me laugh!
-              </button>
-              <div
-                id="joke"
-                class="uk-padding uk-text-large uk-text-primary uk-text-bold"
-              ></div>
+          <!-- joke -->
+          <article class="app">
+            <figure class="article-image">
               <img
                 src="assets/images/alp-ancel-WKQt_X-SKFI-unsplash.jpg"
-                alt="background"
+                alt="Laughing in Adelaide"
               />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </figure>
+            <button id="jokeBtn" class="">Make me laugh!</button>
+            <div id="joke" class=""></div>
+          </article>
     <!-- footer -->
     <footer>
       <div class="uk-grid uk-grid-collapse uk-child-width-expand@s">
