@@ -13,7 +13,7 @@
     <link
       rel="icon"
       type="image/png"
-      href="./assets/images/Favicon.jpg"
+      href="assets/images/Logo3.jpg"
       sizes="36x36"
     />
     <title>Day Maker</title>
@@ -56,14 +56,16 @@
           ></span>
         </button>
       </div>
-      <div id="profilesContainer" class="uk-flex uk-flex-center"></div>
+      <div id="profilesContainer" class="uk-flex uk-flex-center">
+        <div id="profilesAvatar" class="uk-flex uk-flex-center"></div>
+      </div>
     </div>
 
     <!-- This is the modal -->
     <div id="modal-example" uk-modal>
       <div class="uk-modal-dialog uk-modal-body">
         <h2 class="uk-modal-title">Create a profile</h2>
-        <form>
+        <form id="userForm">
           <fieldset class="uk-fieldset" id="form">
             <label class="uk-form-label uk-text-default" for="form-stacked-text"
               >Name</label
@@ -74,7 +76,7 @@
                 class="uk-input uk-form-width-large"
                 id="name"
                 type="text"
-                placeholder="John Doe"
+                placeholder="John"
                 minlength="2"
               />
             </div>
@@ -368,6 +370,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit-icons.min.js"></script>
-    <script src="./assets/js/landing.js"></script>
+    <script src="assets/js/landing.js"></script>
   </body>
 </html>
