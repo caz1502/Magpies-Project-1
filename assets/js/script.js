@@ -84,9 +84,11 @@ jokeSpan.setAttribute("uk-tooltip","title: Showing Categories: " + categories + 
 var newsEl = document.getElementById("news-container");
 
 var newCategories = user.news;
+var newsCountry = user.country;
 
 var getNews = function () {
-    var newsApi = "https://api.mediastack.com/v1/news?access_key=b4ee083bda9fbe5c973c1deba481b67f&sources=en&scategories=" + newCategories + "&limit=9"
+    var newsApi = "https://api.mediastack.com/v1/news?access_key=b4ee083bda9fbe5c973c1deba481b67f&countries="+newsCountry+ "&categories=" + newCategories + "&limit=9"
+    console.log(newsApi)
     var newsSpan = document.getElementById("news-span")
     newsSpan.setAttribute("uk-tooltip","title: Showing Categories: " + newCategories + "; delay: 400")
 
@@ -96,13 +98,26 @@ var getNews = function () {
    
           response.json().then(function (data) {
 
+            console.log(data)
             for (var i=0; i < data.data.length; i++){
                 var cardDiv = document.createElement('div')
                 cardDiv.setAttribute("class","uk-card uk-card-default uk-card-body uk-text-left uk-text-small news-card")
                 var cardTitle = document.createElement('h3')
                 cardTitle.setAttribute("class","uk-card-title uk-text-primary uk-text-bold  uk-text-left")
                 cardTitle.textContent = data.data[i].title
-                cardDiv.appendChild(cardTitle)
+                var cardUrl = document.createElement('a')
+                cardUrl.setAttribute("href",data.data[i].url)
+                cardUrl.setAttribute("target","_blank")
+                cardUrl.appendChild(cardTitle)
+                cardDiv.appendChild(cardUrl)
+                var cardImg = document.createElement('img')
+                cardImgUrl = data.data[i].image
+                    if (cardImgUrl === null){
+                        cardImg.setAttribute("style:","display:none")
+                    }else{
+                    cardImg.setAttribute("src",cardImgUrl)
+                    cardUrl.appendChild(cardImg)
+                    }
                 var cardP = document.createElement('p')
                 cardP.textContent = data.data[i].description
                 cardDiv.appendChild(cardP)
