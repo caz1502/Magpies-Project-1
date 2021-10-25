@@ -128,7 +128,7 @@ var getNews = function () {
             moreNews.innerHTML = "More news"
             moreNews.setAttribute("class","uk-button uk-button-default uk-text-primary uk-text-bold")
             newsEl.appendChild(moreNews)
-
+            moreNews.href = "https://asanilva.github.io/news-app---more-news-github/";
 
           });
         } else {
