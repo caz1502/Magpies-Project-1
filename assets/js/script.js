@@ -87,8 +87,7 @@ var newCategories = user.news;
 var newsCountry = user.country;
 
 var getNews = function () {
-    var newsApi = "https://api.mediastack.com/v1/news?access_key=b4ee083bda9fbe5c973c1deba481b67f&countries="+newsCountry+ "&categories=" + newCategories + "&limit=9"
-    console.log(newsApi)
+    var newsApi = "https://bootcamp-cors-proxy.herokuapp.com/http://api.mediastack.com/v1/news?access_key=0278e9eb0d1243941cd5e996a18101f7&countries=" +newsCountry+ "&categories=" + newCategories + "&limit=9"
     var newsSpan = document.getElementById("news-span")
     newsSpan.setAttribute("uk-tooltip","title: Showing Categories: " + newCategories + "; delay: 400")
 
@@ -98,7 +97,6 @@ var getNews = function () {
    
           response.json().then(function (data) {
 
-            console.log(data)
             for (var i=0; i < data.data.length; i++){
                 var cardDiv = document.createElement('div')
                 cardDiv.setAttribute("class","uk-card uk-card-default uk-card-body uk-text-left uk-text-small news-card")
